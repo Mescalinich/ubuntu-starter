@@ -8,23 +8,32 @@ echo "Ubuntu updated started"
 # Add repositories
 # ================================================================
 echo "Adding repositories"
-# Add repositories
+
 # SimpleScreenRecorder to make screencasts
-sudo add-apt-repository ppa:maarten-baert/simplescreenrecorder -y
+sudo add-apt-repository -y ppa:maarten-baert/simplescreenrecorder 
 # flatpak - new linux package format
-sudo add-apt-repository ppa:alexlarsson/flatpak -y
+sudo add-apt-repository -y ppa:alexlarsson/flatpak 
 # Java
-sudo add-apt-repository ppa:webupd8team/java -y
+sudo add-apt-repository -y ppa:webupd8team/java 
 
 # ================================================================
 # Update repository sources and packages
 # ================================================================
 echo "Updating repository sources and packages"
+
 sudo apt-get update && sudo apt-get upgrade -y
 
 # ================================================================
 # Installing packages
 # ================================================================
+echo "Installing packages"
+
+# SimpleScreenRecorder
+sudo apt-get install -y simplescreenrecorder
+# Flatpak
+sudo apt-get install -y flatpak
+# Java8
+sudo apt-get install -y oracle-java8-installer
 
 # NetworkManager applet (indicator) extensions to manage openvpn connections
-sudo apt-get install network-manager-openvpn network-manager-openvpn-gnome network-manager-pptp network-manager-vpnc -y
+sudo apt-get install -y network-manager-openvpn network-manager-openvpn-gnome network-manager-pptp network-manager-vpnc 
